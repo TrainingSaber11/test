@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto Diagnóstico - Saber 11</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- LOGO SVG INTEGRADO -->
+        <svg class="logo" viewBox="0 0 450 100" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="greek-pattern" patternUnits="userSpaceOnUse" width="10" height="10">
+                    <path d="M0 0 H10 V10 H0 V0 M1 1 V9 H9 V1 M2 2 H8 V8 H2 V2 M3 3 V7 H7 V3 M4 4 H6 V6 H4 V4" stroke="#000" stroke-width="0.5" fill="none"/>
+                </pattern>
+            </defs>
+            <!-- Isotipo (Símbolo G) -->
+            <g transform="translate(50, 50)">
+                <circle cx="0" cy="0" r="45" fill="white" stroke="#333" stroke-width="2"/>
+                <circle cx="0" cy="0" r="38" fill="none" stroke="url(#greek-pattern)" stroke-width="8"/>
+                <path d="M 25 -10 H -15 V 10 H 25" stroke="#333" stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                <path d="M 15 0 H -5" stroke="#333" stroke-width="10" fill="none" stroke-linecap="round"/>
+                <path d="M 25 20 H -15 V -20 H 25" stroke="#333" stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+            </g>
+            <!-- Logotipo (Texto) -->
+            <g transform="translate(120, 25)" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="28" fill="#333333" letter-spacing="1">
+                <text x="0" y="0">GRUPO</text>
+                <text x="0" y="30">EDÚCATE</text>
+                <text x="0" y="60">COLOMBIA</text>
+            </g>
+        </svg>
+    </header>
+
+    <main id="app-container">
+        <!-- PANTALLA 1: BIENVENIDA -->
+        <div id="welcome-screen">
+            <h1>Reto Diagnóstico Saber 11</h1>
+            <p>Mide tus conocimientos sobre la estructura y competencias de la prueba.</p>
+            <p class="purpose-text"><strong>Propósito:</strong> Determinar el grado de conocimiento y apropiación del estudiante respecto a las generalidades de la prueba, su estructura, las competencias, afirmaciones, evidencias y contenidos a ser evaluados.</p>
+            <input type="text" id="student-name" placeholder="Escribe tu nombre para comenzar">
+            <button id="start-btn">Iniciar Reto</button>
+        </div>
+
+        <!-- PANTALLA 2: EL TEST -->
+        <div id="test-screen" class="hidden">
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="progress-text">Pregunta 1 de 20</p>
+            <h2 id="question-text">Aquí irá la pregunta...</h2>
+            <div id="options-container">
+                <!-- Las opciones se generarán con JavaScript -->
+            </div>
+            <button id="next-btn">Siguiente</button>
+        </div>
+
+        <!-- PANTALLA 3: RESULTADOS -->
+        <div id="results-screen" class="hidden">
+            <div class="results-card">
+                <h2 id="results-title">¡Felicidades, [Nombre]!</h2>
+                <p id="results-motivation">Este es tu resultado:</p>
+                <div class="score-container">
+                    <div id="score-chart">
+                        <span id="score-percentage">0%</span>
+                    </div>
+                </div>
+                <div id="results-summary">
+                    <p><strong>Aciertos:</strong> <span id="correct-count">0</span></p>
+                    <p><strong>Incorrectos:</strong> <span id="incorrect-count">0</span></p>
+                </div>
+                <h3>Análisis de respuestas:</h3>
+                <ul id="results-details-list">
+                    <!-- El desglose de resultados se generará aquí -->
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Marfon Galvis Villa - Depto. de Pedagogía</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
